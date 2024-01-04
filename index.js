@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const { Triangle, Square, Circle } = require("./lib/shapes");
 
-// questions
+// Questions for the users logo choices 
 const questions = [
     {
         type: 'list',
@@ -27,10 +27,11 @@ const questions = [
     },
 ];
 
+// Generates the shape based on the users inputs
 function shape(response) {
 
     let svg = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">`;
-
+// Checks if the text is less than 4 letters
 	if (response.text.length < 4) {
 		// 1-3 chars, valid entry
 		user_text = response.text;
@@ -39,26 +40,26 @@ function shape(response) {
 		console.log('Invalid user text field detected! Please enter 1-3 Characters, no more and no less');
         return;
 	};
-
+//Generates the circle svg data
     if (response.shape === 'Circle') {
         shapeChoice = new Circle();
-        svg += `<polygon points="150, 18 244, 182 56, 182" fill="${response.shapeColor}"/>`;
+        svg += `<circle cx="50%" cy="50%" r="100" height="100%" width="100%" fill="${this.color}"/>`;
         svg +=  `
 <text x="150" y="125" font-size="60" text-anchor="middle" fill="${response.textColor}">${user_text}</text>
 </svg>`
-    }
+    }//Generates the Square svg data
     if (response.shape === 'Square') {
         shapeChoice = new Square();
         svg += `<rect x="10" y="10" width="200" height="200" fill="${response.shapeColor}"/>`;
         svg +=  `
 <text x="110" y="125" font-size="60" text-anchor="middle" fill="${response.textColor}">${user_text}</text>
 </svg>`
-    }
+    }//Generates the Triangle svg data
     if (response.shape === 'Triangle') {
-        shapeChoice = new Circle();
+        shapeChoice = new Triangle();
         svg += `<polygon points="150, 18 244, 182 56, 182" fill="${response.shapeColor}"/>`;
         svg +=  `
-<text x="150" y="125" font-size="60" text-anchor="middle" fill="${response.textColor}">${user_text}</text>
+<text x="150" y="145" font-size="60" text-anchor="middle" fill="${response.textColor}">${user_text}</text>
 </svg>`
     } 
     else {
@@ -68,7 +69,7 @@ function shape(response) {
 
     return svg
 };
-
+//Writes the svg file
 function writeToFile(){
     inquirer
       .prompt(questions) 
