@@ -13,7 +13,7 @@ The goal is to create a logo svg file with the users input. The user should be a
 * Created test to make sure the shape classes were working properly
 
 
-![SVG logo generator questions]()
+![SVG logo generator questions](https://github.com/nathan26036/svg-logo-maker/blob/main/images/svg.PNG?raw=true)
   
 ## Installation 
 The final code tutorial can be found at 
