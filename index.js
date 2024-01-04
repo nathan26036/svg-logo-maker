@@ -37,7 +37,7 @@ function shape(response) {
 		user_text = response.text;
 	} else {
 		// 0 or 4+ chars, invalid entry
-		console.log('Invalid user text field detected! Please enter 1-3 Characters, no more and no less');
+		console.log('Invalid user text field detected! Please enter 1-3 Characters!');
         return;
 	};
 //Generates the circle svg data
