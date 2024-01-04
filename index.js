@@ -43,7 +43,7 @@ function shape(response) {
 //Generates the circle svg data
     if (response.shape === 'Circle') {
         shapeChoice = new Circle();
-        svg += `<circle cx="50%" cy="50%" r="100" height="100%" width="100%" fill="${this.color}"/>`;
+        svg += `<circle cx="50%" cy="50%" r="100" height="100%" width="100%" fill="${response.shapeColor}"/>`;
         svg +=  `
 <text x="150" y="125" font-size="60" text-anchor="middle" fill="${response.textColor}">${user_text}</text>
 </svg>`
@@ -61,10 +61,7 @@ function shape(response) {
         svg +=  `
 <text x="150" y="145" font-size="60" text-anchor="middle" fill="${response.textColor}">${user_text}</text>
 </svg>`
-    } 
-    else {
-      console.log('Invalid Shape!');
-    };
+    }
 
 
     return svg
