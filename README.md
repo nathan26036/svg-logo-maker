@@ -16,4 +16,4 @@ The goal is to create a logo svg file with the users input. The user should be a
 ![SVG logo generator questions](https://github.com/nathan26036/svg-logo-maker/blob/main/images/svg.PNG?raw=true)
   
 ## Installation 
-The final code tutorial can be found at 
+The final code tutorial can be found at https://drive.google.com/file/d/1J1wNhEGw9CQ4z_mhONtT1XUKl1FZHfZl/view?t=70
